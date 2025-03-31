@@ -15,7 +15,7 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
   <article class="products-list">
     <div class="product">
       
-      <div class="product-info">
+      <div class="product-info product-info-one">
         <figure>
           <img src={imageSrcOne} alt="preventivo">
         </figure>
@@ -26,7 +26,7 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
       </div>
       </div>
     <div class="product">
-      <div class="product-info">
+      <div class="product-info product-info-two">
         <div class="product-text">
           <h2>{subtitleTwo}</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi consequatur culpa minus esse veniam expedita sit quam fugit. Perspiciatis, eaque consequatur eveniet mollitia suscipit sapiente qui illo ullam voluptates!</p>
@@ -103,7 +103,7 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
     font-size: 2.5rem;
   }
   @media (max-width: 1280px) {
-    .product-text h2 {
+  .product-text h2 {
     font-size: 3rem;
   }
   .product-text p {
@@ -112,5 +112,19 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
   }
   @media (max-width: 1024px) {
 
+  }
+  @media (max-width: 768px) {
+    .product-info figure {
+      width: 50%;
+    }
+    .products-container h1 {
+      font-size: 4rem;
+    }
+    .product-info.product-info-one {
+      flex-direction: column;
+    }
+    .product-info.product-info-two {
+      flex-direction: column-reverse;
+    }
   }
 </style>

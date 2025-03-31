@@ -1,0 +1,48 @@
+---
+import HeaderNavbar from '../components/HeaderNavbar.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Products from '../components/Products.astro';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>Impermex</title>
+	</head>
+	<body>
+		<HeaderNavbar />
+		<Hero />
+		<Services />
+		<Products 
+			sectionTitle='Nuestros Productos'
+			subtitleOne='Productos Sika'
+			subtitleTwo='Productos Fester'
+			imageSrcOne="images/sika.webp"
+			imageSrcTwo="images/fester.jpg"
+			/>
+	</body>
+</html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html {
+		box-sizing: border-box;
+		font-size: 62.5%;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+		font-family: "Nunito Sans", sans-serif;
+		font-size: 1.6rem;
+	}
+</style>

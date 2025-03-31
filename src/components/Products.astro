@@ -1,0 +1,116 @@
+---
+export interface Props {
+  sectionTitle: string;
+  subtitleOne: string;
+  subtitleTwo: string;
+  imageSrcOne: string;
+  imageSrcTwo: string;
+
+};
+const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Astro.props;
+---
+
+<section class="products-container">
+  <h1>{sectionTitle}</h1>
+  <article class="products-list">
+    <div class="product">
+      
+      <div class="product-info">
+        <figure>
+          <img src={imageSrcOne} alt="preventivo">
+        </figure>
+        <div class="product-text">
+          <h2>{subtitleOne}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi consequatur culpa minus esse veniam expedita sit quam fugit. Perspiciatis, eaque consequatur eveniet mollitia suscipit sapiente qui illo ullam voluptates!</p>
+        </div>
+      </div>
+      </div>
+    <div class="product">
+      <div class="product-info">
+        <div class="product-text">
+          <h2>{subtitleTwo}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quasi consequatur culpa minus esse veniam expedita sit quam fugit. Perspiciatis, eaque consequatur eveniet mollitia suscipit sapiente qui illo ullam voluptates!</p>
+        </div>
+        <figure>
+          <img src={imageSrcTwo} alt="correctivo">
+        </figure>
+      </div>
+    </div>
+  </article>
+</section>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+  }
+  .products-container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding-block: 50px;
+    background-image: linear-gradient(to bottom, #000000, #140c11, #1e161e, #241e2d, #25283e, #353b52, #454e67, #56637c, #81879b, #abadbb, #d5d5dc, #ffffff);
+  }
+  .products-container h1 {
+    font-size: 6rem;
+  }
+  .products-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-block: 50px;
+  }
+  .product {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  .product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .product-info figure {
+    width: 20%;
+  }
+  .product-info figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.35);
+  }
+  .product-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 60%;
+  }
+  .product-text h2 {
+    font-size: 4rem;
+  }
+  .product-text p {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 1280px) {
+    .product-text h2 {
+    font-size: 3rem;
+  }
+  .product-text p {
+    font-size: 1.8rem;
+  }
+  }
+  @media (max-width: 1024px) {
+
+  }
+</style>

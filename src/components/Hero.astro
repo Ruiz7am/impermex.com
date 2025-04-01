@@ -32,9 +32,15 @@ const Dots = "div";
   </Dots>
 
   <HeroInfo class="hero-info">
-    <h1>Somos Impermex</h1>
-    <h2>Impermeabilización Residencial</h2>
-    <p>Nos dedicamos a la Impermeabilización de residencias y negocios pequeños. Nuestra misión es proporcionar un servicio de calidad con los materiales más resistentes que hay en el mercado.</p>
+    <h1>¡Protege tu Hogar con Nuestros Servicios de Impermeabilización!</h1>
+    <h2>Somos Impermex Impermeabilización Residencial</h2>
+    <p>Nos dedicamos a la Impermeabilización de inmuebles residenciales y locales comerciales. Nuestra misión es proporcionar un servicio de calidad con los materiales más resistentes que hay en el mercado.</p>
+    <!-- <p>Evita filtraciones y humedad con nuestra impermeabilización profesional. Usamos materiales de alta calidad para garantizar la mejor protección para tu techo.</p>
+    <p>✅ Presupuestos sin compromiso
+      <br>
+      ✅ Materiales de primera calidad
+      <br>
+      ✅ Garantía por escrito</p> -->
   </HeroInfo>
   <button>Contáctenos</button>
 </section>
@@ -101,7 +107,7 @@ const Dots = "div";
 	.hero-info {
     position: absolute;
     top: 50%;
-		width: 60%;
+		width: 100%;
 		padding-block: 50px 50px;
     padding-inline-end: 100px;
 		background: linear-gradient(to right, rgba(0,0,0,0.35), transparent);
@@ -148,26 +154,31 @@ const Dots = "div";
   @media (min-width: 1921px) {
     .hero-info {
       padding-inline-start: 7%;
+      transform: translateY(0%);
     }
   }
   @media (max-width: 1920px) {
     .hero-info {
       padding-inline-start: 6%;
+      transform: translateY(-10%);
     }
   }
   @media (max-width: 1440px) {
     .hero-info {
-      width: 75%
+      width: 75%;
+      transform: translateY(-35%);
     }
   }
   @media (max-width: 1280px) {
     .hero-info {
-      width: 85%
+      width: 85%;
+      transform: translateY(-38%);
     }
   }
   @media (max-width: 1024px) {
     .hero-info {
       width: 100%;
+      transform: translateY(-50%);
     }
     .hero-info h1 {
 		  font-size: 4.8rem;
@@ -184,6 +195,9 @@ const Dots = "div";
     }
   }
   @media (max-width: 768px) {
+    .hero-info {
+    transform: translateY(-58%);
+    }
     .hero-info h1 {
       font-size: 4rem;
     }
@@ -196,12 +210,12 @@ const Dots = "div";
   }
   @media (max-width: 600px) {
     .hero-info {
-      top: 45%;
+      transform: translateY(-55%);
     }
   }
   @media (max-width: 480px) {
     .hero-info {
-      top: 40%
+      transform: translateY(-58%);
     }
   }
 </style>

@@ -1,5 +1,6 @@
 ---
 import logo from '../assets/logo.svg';
+import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
 ---
 
 <header>
@@ -7,7 +8,7 @@ import logo from '../assets/logo.svg';
     <img src={logo.src} alt="Log de Impermex">
     <span>Impermeabilización <br> Residencial</span>
   </figure>
-  <nav>
+  <nav class="header__navbar">
     <ul>
       <li><span>Inicio</span></li>
       <li><span>Servicios</span></li>
@@ -19,7 +20,7 @@ import logo from '../assets/logo.svg';
       <path d="M0 12V10H18V12H0ZM0 7V5H18V7H0ZM0 2V0H18V2H0Z" fill="#000000"/>
     </svg>
   </figure>
-  <button>Contáctenos</button>
+  <button class="whatsapp-button">Contáctenos<span class="whatsapp-logo-container"><img src={whatsapplogo.src} alt="Logo del wasap"></span></button>
 </header>
 
 <style>
@@ -37,11 +38,11 @@ import logo from '../assets/logo.svg';
     display: flex;
     justify-content: space-between;
     width: 90%;
-    padding:30px;
+    padding:20px 30px;
     height: fit-content;
     font-weight: bold;
     background-color: aliceblue;
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.35);
     transition: all 850ms;
   }
@@ -60,23 +61,23 @@ import logo from '../assets/logo.svg';
     text-align: justify;
     
   }
-  nav {
+  .header__navbar {
     margin: auto 0;
   }
-  nav ul {
+  .header__navbar ul {
     display: flex;
     gap: 50px;
   }
-  nav ul li {
+  .header__navbar ul li {
     cursor: pointer;
     font-size: 2rem;
     list-style: none;
   }
   
-  nav ul li span {
+  .header__navbar ul li span {
     transition: transform 350ms;
   }
-  nav ul li:hover span {
+  .header__navbar ul li:hover span {
     transform: scale(1.15);
     color: lch(from chocolate calc(l + 10) c h)
   }
@@ -84,7 +85,11 @@ import logo from '../assets/logo.svg';
     display: none;
   }
   button {
-    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 20px;
+    width: 225px;
     border: none;
     border-radius: 12px;
     font-size: 1.8rem;
@@ -99,6 +104,16 @@ import logo from '../assets/logo.svg';
   button:hover {
     background-color: lch(from chocolate calc(l + 10) c h);
     transform: scale(1.05);
+  }
+  .whatsapp-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+
+  }
+  .whatsapp-logo-container img {
+    width: 100%;
   }
   .scroll {
     position: fixed;
@@ -140,6 +155,7 @@ import logo from '../assets/logo.svg';
 
 <script>
   navbarTransformAtScroll();
+  whatsappButtonAction();
   
   function navbarTransformAtScroll(){
     const header = document.getElementsByTagName('header')[0];
@@ -152,4 +168,12 @@ import logo from '../assets/logo.svg';
       };
     });
   };
+
+  function whatsappButtonAction() {
+    const whatsappButton = document.querySelector('.whatsapp-button');
+    whatsappButton?.addEventListener('click', () => {
+      console.log('click')
+      window.open('https://wa.me/5217207636713', '_blank');
+    });
+  }
 </script>

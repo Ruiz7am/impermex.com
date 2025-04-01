@@ -1,12 +1,67 @@
 ---
-
+const column = 'div';
+const footerSign = 'div';
 ---
 <footer>
-
+  <column class="column social-media">
+   
+    <figure>
+      <span></span>
+      <p><a href="#"></a></p>
+    </figure>
+    <figure>
+      <span></span>
+      <p><a href="#"></a></p>
+    </figure>
+    <figure>
+      <span></span>
+      <p><a href="#"></a></p>
+    </figure>
+    <figure>
+      <span></span>
+      <p><a href="#"></a></p>
+    </figure>
+  </column>
+  <column class="column">
+    <figure>
+      <span></span>
+      <p><a href="https://maps.app.goo.gl/BE22ANSKGgE73uzDA">3ra. Cerrada de Mar de Herodoto #11 Fracc. Los Olivos, Corregidora, Santiago de Querétaro</a></p>
+    </figure>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d933.9780728608831!2d-100.40812873043976!3d20.55076925457056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDMzJzAyLjgiTiAxMDDCsDI0JzI3LjAiVw!5e0!3m2!1ses!2smx!4v1743516652587!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </column>
+  <footerSign class="footer-sign">
+      <p>Made with 🤍 from 🇲🇽 by <strong><a href="https://ruiz7am.github.io/ruizam/">@ruiz7am</a></strong></p>
+  </footerSign>
 </footer>
 
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   footer {
-    height: 33vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #193854;
+    color: aliceblue;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+  .footer-sign {
+    width: 100%;
+  }
+  iframe {
+    border-radius: 10px;
   }
 </style>

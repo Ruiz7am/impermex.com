@@ -33,7 +33,7 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
           <h2>{subtitleTwo}</h2>
           <p>Proteja su techo con la calidad garantizada de Fester. Nuestros sistemas impermeabilizantes combinan tecnología de punta y materiales premium para una barrera duradera contra humedad y filtraciones. La línea Fester® Acriton ofrece resistencia superior a la intemperie y flexibilidad que se adapta a los movimientos estructurales de su techo. El sistema Fester® CR-66 brinda impermeabilización cementosa de alto rendimiento, mientras que Fester® Vaportite sella perfectamente grietas y juntas problemáticas. Elija la marca con más de 65 años de experiencia en México, respaldada por garantías reales y resultados comprobados que protegen su hogar temporada tras temporada.</p>
         </div>
-        <figure>
+        <figure class="fester">
           <img src={imageSrcTwo} alt="correctivo">
         </figure>
       </div>
@@ -53,6 +53,7 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 100px;
     height: fit-content;
     padding-block: 50px;
     background-image: linear-gradient(to bottom, #000000, #140c11, #1e161e, #241e2d, #25283e, #353b52, #454e67, #56637c, #81879b, #abadbb, #d5d5dc, #ffffff);
@@ -64,7 +65,7 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 150px;
     flex-wrap: wrap;
     margin-block: 50px;
   }
@@ -82,6 +83,7 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
   }
   .product-info figure {
     width: 20%;
+    height: 300px;
   }
   .product-info figure img {
     width: 100%;
@@ -89,6 +91,9 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.35);
+  }
+  figure.fester img {
+    object-position: top;
   }
   .product-text {
     display: flex;
@@ -104,7 +109,25 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
   .product-text p {
     font-size: 2.5rem;
   }
+  @media (max-width: 2024px) {
+    .product-info figure {
+    height: 320px;
+  }
+  }
+  @media (max-width: 1920px) {
+    .product-info figure {
+    height: 300px;
+  }
+  }
+  @media (max-width: 1440px) {
+    .product-info figure {
+    height: 250px;
+  }
+  }
   @media (max-width: 1280px) {
+    .product-info figure {
+    height: 200px;
+  }
   .product-text h2 {
     font-size: 3rem;
   }
@@ -113,11 +136,14 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
   }
   }
   @media (max-width: 1024px) {
-
+    .product-info figure {
+    height: 180px;
+  }
   }
   @media (max-width: 768px) {
     .product-info figure {
       width: 50%;
+      height: 300px;
     }
     .products-container h1 {
       font-size: 4rem;
@@ -127,6 +153,16 @@ const { sectionTitle, subtitleOne, subtitleTwo, imageSrcOne, imageSrcTwo } = Ast
     }
     .product-info.product-info-two {
       flex-direction: column-reverse;
+    }
+  }
+  @media (max-width: 600px) {
+    .product-info figure {
+      height: 250px;
+    }
+  }
+  @media (max-width: 430px) {
+    .product-info figure {
+      height: 200px;
     }
   }
 </style>

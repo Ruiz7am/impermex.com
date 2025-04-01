@@ -2,6 +2,7 @@
 const HeroInfo = "div";
 const Imagen = "div";
 const Dots = "div";
+import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg'
 ---
 
 <section class="hero">
@@ -42,7 +43,7 @@ const Dots = "div";
       <br>
       ✅ Garantía por escrito</p> -->
   </HeroInfo>
-  <button>Contáctenos</button>
+  <button class="whatsapp-button">Contáctenos<span class="whatsapp-logo-container"><img src={whatsapplogo.src} alt="Logo del wasap"></span></button>
 </section>
 
 <style>
@@ -122,15 +123,18 @@ const Dots = "div";
 	.hero-info p {
 		font-size: 3rem;
 	}
-  button {
+  .whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 20px;
     position: absolute;
     top: 85%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 4;
     display: none;
-    width: 200px;
-    height: 44px;
+    width: 225px;
     border: none;
     border-radius: 12px;
     font-size: 1.8rem;
@@ -142,9 +146,28 @@ const Dots = "div";
     cursor: pointer;
     transition: transform 350ms;
   }
-  button:hover {
-    background-color: lch(from chocolate calc(l + 10) c h);
-    transform: scale(1.05);
+  .whatsapp-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+
+  }
+  .whatsapp-logo-container img {
+    width: 100%;
+  }
+  .scroll {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: none;
+    border-radius: 0px;
+  }
+  @media (hover: hover) {
+    .whatsapp-button:hover {
+      background-color: lch(from chocolate calc(l + 10) c h);
+      transform: scale(1.05);
+    }
   }
   @media (min-width: 2024px) {
     .hero-info {
@@ -190,8 +213,8 @@ const Dots = "div";
     .hero-info p {
       font-size: 1.8rem;
     }
-    button {
-      display: inline-block;
+    .whatsapp-button {
+      display: flex;
     }
   }
   @media (max-width: 768px) {
@@ -257,5 +280,5 @@ if (slides.length > 0 && dots.length > 0) { // check if any elements exist to sh
     dots[slideIndex - 1].className += " active";
 }
 setTimeout(showSlides, 5000);
-  }
+  };
 </script>

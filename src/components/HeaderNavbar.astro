@@ -77,14 +77,10 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
   .header__navbar ul li span {
     transition: transform 350ms;
   }
-  .header__navbar ul li:hover span {
-    transform: scale(1.15);
-    color: lch(from chocolate calc(l + 10) c h)
-  }
   .mobile-menu {
     display: none;
   }
-  button {
+  .whatsapp-button {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -100,10 +96,6 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.20);
     cursor: pointer;
     transition: transform 350ms;
-  }
-  button:hover {
-    background-color: lch(from chocolate calc(l + 10) c h);
-    transform: scale(1.05);
   }
   .whatsapp-logo-container {
     display: flex;
@@ -122,6 +114,16 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
     max-width: none;
     border-radius: 0px;
   }
+  @media (hover: hover) {
+    .whatsapp-button:hover {
+      background-color: lch(from chocolate calc(l + 10) c h);
+      transform: scale(1.05);
+    }
+    .header__navbar ul li:hover span {
+    transform: scale(1.15);
+    color: lch(from chocolate calc(l + 10) c h)
+  }
+  }
   @media (max-width: 1920px) {
     header {
       max-width: 1728px;
@@ -136,7 +138,7 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
     }
   }
   @media (max-width: 1024px) {
-    button {
+    .whatsapp-button {
       display: none;
     }
     figure span {
@@ -155,7 +157,6 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
 
 <script>
   navbarTransformAtScroll();
-  whatsappButtonAction();
   
   function navbarTransformAtScroll(){
     const header = document.getElementsByTagName('header')[0];
@@ -168,12 +169,4 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
       };
     });
   };
-
-  function whatsappButtonAction() {
-    const whatsappButton = document.querySelector('.whatsapp-button');
-    whatsappButton?.addEventListener('click', () => {
-      console.log('click')
-      window.open('https://wa.me/5217207636713', '_blank');
-    });
-  }
 </script>

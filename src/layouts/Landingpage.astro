@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import Products from '../components/Products.astro';
 import MyFooter from '../components/MyFooter.astro';
+import Dev from '../components/ImUrFrontendDev.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -29,6 +30,7 @@ import MyFooter from '../components/MyFooter.astro';
 			imageSrcTwo="images/fester.jpg"
 			/>
 		<MyFooter />
+		<Dev />
 	</body>
 </html>
 
@@ -51,7 +53,9 @@ import MyFooter from '../components/MyFooter.astro';
 </style>
 
 <script>
-whatsappButtonAction();
+
+	whatsappButtonAction();
+	wakeUpMyDev();
 
 	function whatsappButtonAction() {
     const whatsappButtons = document.getElementsByClassName('whatsapp-button');
@@ -62,4 +66,42 @@ whatsappButtonAction();
     	});
 		});
 	};
+
+	function wakeUpMyDev(){
+		// Get the modal element
+    const modal = document.getElementById('dev-modal');
+		if (!modal) return; // Early return if modal doesn't exist
+    
+    // Get the element that opens the modal
+    const footerSign = document.querySelector('.footer-sign p strong');
+    
+    // Get the <span> element that closes the modal
+    const closeButton = document.querySelector('.close-modal');
+    
+    // When the user clicks on the footer name, open the modal
+    if (footerSign) {
+      footerSign.addEventListener('click', () => {
+        if (modal) {
+          modal.style.display = 'block';
+        }
+      });
+    }
+    
+    // When the user clicks on the close button, close the modal
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        if (modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+
 </script>

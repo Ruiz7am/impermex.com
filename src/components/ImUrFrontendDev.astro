@@ -1,0 +1,112 @@
+---
+import logoImage from '../assets/avatar-dark.png'
+---
+<div id="dev-modal" class="dev-modal">
+  <div class="dev-modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="dev-card">
+      <img src={logoImage.src} alt="Developer Avatar" />
+      <h2>@ruiz7am</h2>
+      <p>Frontend Developer</p>
+      <div class="social-links">
+        <a href="https://github.com/Ruiz7am" target="_blank">GitHub</a>
+        <a href="https://www.facebook.com/profile.php?id=61552171175028" target="_blank">Facebook</a>
+        <a href="mailto:artmx@proton.me">Email</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dev-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+  }
+
+  .dev-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: modalFadeIn 0.4s ease;
+  }
+
+  @keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  .close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close-modal:hover {
+    color: black;
+  }
+
+  .dev-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dev-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #193854;
+  }
+
+  .dev-card h2 {
+    margin-top: 15px;
+    font-size: 2.4rem;
+    color: #193854;
+  }
+
+  .dev-card p {
+    margin-top: 5px;
+    font-size: 1.6rem;
+    color: #666;
+  }
+
+  .social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-links a {
+    padding: 8px 15px;
+    background-color: #193854;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background-color: #5e98cb;
+    transform: translateY(-2px);
+  }
+</style>
+
+<script>
+  import { Logo } from '../components/logo/logo.mjs';
+	customElements.define('my-logo', Logo);
+</script>

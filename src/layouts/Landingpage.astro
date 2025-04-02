@@ -69,14 +69,15 @@ import Dev from '../components/ImUrFrontendDev.astro';
 
 	function wakeUpMyDev(){
 		// Get the modal element
-    const modal = document.getElementById('dev-modal');
+		const devCard = document.querySelector('dev-card');
+		const modal = devCard?.shadowRoot?.getElementById('dev-modal');
 		if (!modal) return; // Early return if modal doesn't exist
     
     // Get the element that opens the modal
     const footerSign = document.querySelector('.footer-sign p strong');
     
     // Get the <span> element that closes the modal
-    const closeButton = document.querySelector('.close-modal');
+    const closeButton = devCard?.shadowRoot?.querySelector('.close-modal');
     
     // When the user clicks on the footer name, open the modal
     if (footerSign) {

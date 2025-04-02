@@ -15,11 +15,11 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
       <li><span>Productos</span></li>
     </ul>
   </nav>
-  <figure class="mobile-menu">
+  <div class="mobile-menu">
     <svg width="35" height="35" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 12V10H18V12H0ZM0 7V5H18V7H0ZM0 2V0H18V2H0Z" fill="#000000"/>
     </svg>
-  </figure>
+  </div>
   <button class="whatsapp-button">Contáctenos<span class="whatsapp-logo-container"><img src={whatsapplogo.src} alt="Logo del wasap"></span></button>
 </header>
 
@@ -36,6 +36,7 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 90%;
     padding:20px 30px;
@@ -79,6 +80,8 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
   }
   .mobile-menu {
     display: none;
+    width: fit-content;
+    height: fit-content;
   }
   .whatsapp-button {
     display: flex;
@@ -150,14 +153,15 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
       display: none;
     }
     .mobile-menu {
-      display: inline-block;
+      display: flex;
     }
   }
 </style>
 
 <script>
   navbarTransformAtScroll();
-  
+  openMobileMenu();
+
   function navbarTransformAtScroll(){
     const header = document.getElementsByTagName('header')[0];
     
@@ -168,5 +172,12 @@ import whatsapplogo from '../assets/whatsapp-color-svgrepo-com.svg';
         header.classList.remove('scroll');
       };
     });
+  };
+
+  function openMobileMenu(){
+    const mobileMenu = document.querySelector('.mobile-menu');
+    mobileMenu?.addEventListener('click', () => {
+      
+    })
   };
 </script>

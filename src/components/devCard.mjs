@@ -1,19 +1,20 @@
 export class DevCard extends HTMLElement {
+  // Constructor
   constructor(){
     super();
     this.attachShadow({mode: 'open'});
-  }
-
+  };
+  // Lifecycle methods
+  // Observer for attribute changes
   static get observedAttribute () {
     return['imagesource', 'title', 'paragraph']
-  }
-
+  } ;
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue !== newValue){
       this.render();
     }
-  }
-
+  };
+  // Getting template and styles
   getTemplate(){
     const imageSource = this.getAttribute('imagesource');
     const paragraph = this.getAttribute('paragraph');
@@ -43,8 +44,7 @@ export class DevCard extends HTMLElement {
       </style>
     `
     return logo;
-  }
-
+  };
   getStyles(){
     return `
     * {
@@ -155,7 +155,8 @@ export class DevCard extends HTMLElement {
     }
   }
     `
-  }
+  };
+  // Scripts area
   avatarAnimation(){
     const devCard = document.querySelector('dev-card');
     const devCardImg = devCard.shadowRoot.querySelector('.image-container img');
@@ -166,15 +167,15 @@ export class DevCard extends HTMLElement {
         devCardImg.classList.remove('rotate-card');
       },500) */
     }
-  }
+  };
+  // All will be render must be here
   render(){
     this.shadowRoot.innerHTML = '';
     this.shadowRoot.appendChild(this.getTemplate().content.cloneNode(true));
-  }
-
+  };
+  // Lifecycle method to run when the element is added to the DOM
   connectedCallback(){
     this.render();
     this.avatarAnimation();
-  }
-
+  };
 }
